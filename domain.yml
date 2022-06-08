@@ -27,4 +27,7 @@ responses:
   - text: "Welcome"
   - text: "Anytime"
   - text: "You are welcome"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
  

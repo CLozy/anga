@@ -40,3 +40,8 @@ stories:
   - action: utter_weather
   - intent: goodbye
   - action: utter_goodbye
+
+- story: path 5
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
