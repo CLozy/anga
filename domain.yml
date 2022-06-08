@@ -29,7 +29,6 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-<<<<<<< HEAD
   utter_gratitude:
   - text: "Welcome"
   - text: "Anytime"
@@ -38,8 +37,6 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
  
-=======
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
->>>>>>> c13ec48770bf07143053576601334af15c7388f9
