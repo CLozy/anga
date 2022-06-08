@@ -1,0 +1,30 @@
+version: "3.1"
+
+intents:
+  - greet
+  - location
+  - goodbye
+
+responses:
+  utter_greet:
+  - text: Hey I am Anga! Wanna check the weather today?
+  - text: Hi , my name is Anga. Do you want to know about the weather today?
+  - text: Hello, I'm Anga. Can I  tell you about the weather today?
+
+
+  utter_ask_location:
+  - text: Great. What is your Location?
+
+  utter_goodbye:
+  - text: bye
+  - text: Goodbye
+  - text: See ya
+
+  utter_weather:
+  - text: The weather for {location} currently is {weather_report}
+
+  utter_gratitude:
+  - text: "Welcome"
+  - text: "Anytime"
+  - text: "You are welcome"
+ 
