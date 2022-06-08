@@ -12,8 +12,8 @@ intents:
 responses:
   utter_greet:
   - text: "Hey, I am Anga. Would you like to know the current weather forecast at your location?"
-  - text: Hi, my name is Anga. Can i tell you the weather forecast today?
-  - text: Hello, I'm Anga. Wanna know about the weather today?
+  - text: "Hi, my name is Anga. Can i tell you the weather forecast today?"
+  - text: "Hello, I'm Anga. Wanna know about the weather today?"
 
 
   utter_weather:
