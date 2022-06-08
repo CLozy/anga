@@ -2,27 +2,34 @@ version: "3.1"
 
 intents:
   - greet
-  - location
   - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
 
 responses:
   utter_greet:
-  - text: Hey I am Anga! Wanna check the weather today?
-  - text: Hi , my name is Anga. Do you want to know about the weather today?
-  - text: Hello, I'm Anga. Can I  tell you about the weather today?
+  - text: "Hey! How are you?"
 
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
 
-  utter_ask_location:
-  - text: Great. What is your Location?
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: bye
-  - text: Goodbye
-  - text: See ya
+  - text: "Bye"
 
-  utter_weather:
-  - text: The weather for {location} currently is {weather_report}
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
 
+<<<<<<< HEAD
   utter_gratitude:
   - text: "Welcome"
   - text: "Anytime"
@@ -31,3 +38,8 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
  
+=======
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+>>>>>>> c13ec48770bf07143053576601334af15c7388f9
