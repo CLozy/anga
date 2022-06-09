@@ -2,6 +2,22 @@ version: "3.1"
 
 rules:
 
+- rule: Activate location form
+  steps:
+  - intent: city
+  - action: location_form
+  - active_loop: location_form
+
+- rule: Submit location form
+  condition: 
+  - active_loop: location_form
+  steps:
+  - action: location_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_weather
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye

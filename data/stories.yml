@@ -7,7 +7,7 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: affirm
-  - action: utter_ask_location
+  - action: utter_ask_city
   - intent: location
   - action: utter_weather
   - intent: gratitude
@@ -35,7 +35,7 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: affirm
-  - action: utter_ask_location
+  - action: utter_ask_city
   - intent: location
   - action: utter_weather
   - intent: goodbye

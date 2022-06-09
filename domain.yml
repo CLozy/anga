@@ -5,7 +5,7 @@ intents:
   - goodbye
   - affirm
   - deny
-  - location
+  - city
   - gratitude
   - bot_challenge
 
@@ -17,10 +17,10 @@ responses:
 
 
   utter_weather:
-  - text: "This is the current weather forecast {location}"
+  - text: "This is the current weather forecast {city}"
 
-  utter_ask_location:
-  - text: "What is your location?"
+  utter_ask_city:
+  - text: "What is your city?"
 
   utter_goodbye:
   - text: "Bye"
@@ -32,6 +32,23 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+
+entities:
+- city
+
+slots:
+  city:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: city
+
+
+forms:
+  location_form:
+    required_slots:
+      - city
  
 session_config:
   session_expiration_time: 60

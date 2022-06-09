@@ -35,7 +35,7 @@ nlu:
     - not really
 
 
-- intent: location
+- intent: city
   examples: |
     - my current location is [nyeri]{"entity":"city"}
     - Location is [Mombasa](city)
@@ -43,7 +43,7 @@ nlu:
     - My location is [johannesburg](city)
     - Am in [london](city)
     - Residing in [washington](city)
-    -[singapore](location)
+    -[singapore](city)
 
 
 - intent: gratitude
