@@ -49,6 +49,9 @@ forms:
   location_form:
     required_slots:
       - city
+
+actions:
+  - 
  
 session_config:
   session_expiration_time: 60
