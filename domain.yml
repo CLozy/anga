@@ -7,12 +7,13 @@ intents:
   - deny
   - city
   - gratitude
+  - ask_weather
   - bot_challenge
 
 responses:
   utter_greet:
-  - text: "Hey, I am Anga. Would you like to know the current weather forecast at your location?"
-  - text: "Hi, my name is Anga. Can i tell you the weather forecast today?"
+  - text: "Hey, I am Anga. Would you like to know the current weather forecast ?"
+  - text: "Hi, my name is Anga. Can i tell you the weather forecast?"
   - text: "Hello, I'm Anga. Wanna know about the weather today?"
 
 
@@ -20,7 +21,7 @@ responses:
   - text: "This is the current weather forecast {city}"
 
   utter_ask_city:
-  - text: "What is your city?"
+  - text: "What is the location?"
 
   utter_goodbye:
   - text: "Bye"
@@ -51,7 +52,7 @@ forms:
       - city
 
 actions:
-  - 
+  - action_weather_forecast
  
 session_config:
   session_expiration_time: 60

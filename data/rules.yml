@@ -16,7 +16,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  - action: utter_weather
+  - action: action_weather_forecast
 
 - rule: Say goodbye anytime the user says goodbye
   steps:

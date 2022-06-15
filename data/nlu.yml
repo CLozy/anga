@@ -54,6 +54,13 @@ nlu:
     - Thank you very much
     - Thanks anga
 
+- intent: ask_weather
+  examples: |
+    - whats the weather today?
+    - tell me about the weather.
+    - weather forecast?
+    - is it going to rain?
+
 - intent: goodbye
   examples: |
     - bye
