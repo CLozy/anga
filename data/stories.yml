@@ -44,7 +44,7 @@ stories:
   - action: utter_goodbye
 
 
-- story: path 1
+- story: path 5
   steps:
   - intent: greet
   - action: utter_greet
@@ -58,7 +58,7 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: path 1
+- story: path 6
   steps:
   - intent: ask_weather
   - action: utter_ask_city
@@ -70,8 +70,15 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
+- story: path 7
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: gratitude
+  - action: utter_gratitude
 
-- story: path 5
+
+- story: path 8
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
