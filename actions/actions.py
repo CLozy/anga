@@ -51,9 +51,14 @@ class ActionWeatherForecast(Action):
         city_slot_value = tracker.get_slot("city")
         forecast = get_weather_data(city_slot_value)
 
-        message = f"The current weather in {forecast['region']} is {forecast['weather_now']}.\nTemperature: {forecast['temp_now_c']} | {forecast['temp_now_f']}.\n Precipitation: {forecast['precipitation']}. \nHumidity: {forecast['humidity']}. \nWind: {forecast['wind']}"
+        if forecast['invalid_city'] == ' ':
+            dispatcher.utter_message(text="Please enter valid city name ")
 
-        dispatcher.utter_message(text=message)
+        else:
+            message = f"The current weather in {city_slot_value}  for {forecast['datetime']} displays {forecast['weather_now']}.\nTemperature: {forecast['temp_celsious']} | {forecast['temp_farenheit']}. \nHumidity: {forecast['humidity']}. \nWind: {forecast['wind']}"
+            
+            dispatcher.utter_message(text = "Okay, Looking at the sky :)")
+            dispatcher.utter_message(text=message)
        
 
         return []
