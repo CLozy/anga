@@ -34,7 +34,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
-from . import weather
+from weatherpkg.weather import get_weather_data
 
 
 class ActionWeatherForecast(Action):
@@ -49,7 +49,7 @@ class ActionWeatherForecast(Action):
 
 
         city_slot_value = tracker.get_slot("city")
-        forecast = weather.get_weather_data(city_slot_value)
+        forecast = get_weather_data(city_slot_value)
 
         message = f"The current weather in {forecast['region']} is {forecast['weather_now']}.\nTemperature: {forecast['temp_now_c']} | {forecast['temp_now_f']}.\n Precipitation: {forecast['precipitation']}. \nHumidity: {forecast['humidity']}. \nWind: {forecast['wind']}"
 
