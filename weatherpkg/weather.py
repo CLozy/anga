@@ -20,11 +20,11 @@ from datetime import datetime as dt
 #     html = session.get(URL)
 #     # create a new soup
 #     soup = BeautifulSoup(html.text, "html.parser")
-    
+
 #         # store all results on this dictionary
 #     result = {}
 #     # extract region
-#     result['region'] = soup.find("div", attrs={"id": "wob_loc"}).text 
+#     result['region'] = soup.find("div", attrs={"id": "wob_loc"}).text
 
 #     #get temp in celsius and farenheit
 
@@ -34,7 +34,7 @@ from datetime import datetime as dt
 #     result['dayhour'] = soup.find("div", attrs={"id": "wob_dts"}).text
 #     # get the actual weather
 #     result['weather_now'] = soup.find("span", attrs={"id": "wob_dc"}).text
-    
+
 #     # get the precipitation
 #     result['precipitation'] = soup.find("span", attrs={"id": "wob_pp"}).text
 #     # get the % of humidity
@@ -45,9 +45,9 @@ from datetime import datetime as dt
 #     #extract image
 #     image_url= str(soup.select( "#wob_tci")[0]).split()
 
-#     result['img'] = "https:" + re.search(r'//\w+.\w+.\w+/\w+.+\w+', image_url[-1]).group() 
-    
-    
+#     result['img'] = "https:" + re.search(r'//\w+.\w+.\w+/\w+.+\w+', image_url[-1]).group()
+
+
 #     return soup
 
 
@@ -55,7 +55,7 @@ def get_weather_data(city):
 
     BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
 
-    API_KEY = open("weatherpkg\openweatherapikey.txt", "r").read()
+    API_KEY = open(r"weatherpkg\openweatherapikey.txt", "r").read()
 
     url = BASE_URL + "appid=" + API_KEY + "&q=" + city
 
@@ -64,22 +64,19 @@ def get_weather_data(city):
     if response['cod'] == '404':
         weather_data['invalid_city'] = " "
 
-
     else:
-        
-        #temperature
+        # temperature
         temp_celsious = (response['main']['temp'])-273.15
-        weather_data['temp_celsious']="%.2f" % temp_celsious + "°C"
+        weather_data['temp_celsious'] = "%.2f" % temp_celsious + "°C"
 
-        weather_data['temp_farenheit'] = "%.2f" % (temp_celsious * (9/5) + 32)+ "°F"
+        weather_data['temp_farenheit'] = "%.2f" % (
+            temp_celsious * (9/5) + 32) + "°F"
 
         weather_data['desc'] = response['weather'][0]['description']
         weather_data['humidity'] = str(response['main']['humidity']) + "%"
         weather_data['wind'] = str(response['wind']['speed']) + "m/s"
         weather_data['datetime'] = dt.now().strftime("%d  %b %Y | %I:%M:%S %p")
 
-        
-
     return weather_data
 
-# print(get_weather_data("kamakwa"))
+# print(get_weather_data("nairobi"))
