@@ -17,10 +17,37 @@ nlu:
 - intent: goodnews
   examples: |
     - goodnews
+    - good news
 
 - intent: badnews
   examples: |
     - badnews
+    - bad news
+
+- intent: coast
+  examples: |
+    - coast
+    - Coast
+
+- intent: central
+  examples: |
+    - central
+    - Central
+
+- intent: northeasterneastern
+  examples: |
+    - northeasterneastern
+    - north eastern eastern
+
+- intent: riftvalley
+  examples: |
+    - riftvalley
+    - rift valley
+
+- intent: westernnyanza
+  examples: |
+    - westernnyanza
+    - western nyanza
 
 - intent: affirm
   examples: |

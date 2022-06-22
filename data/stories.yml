@@ -2,11 +2,25 @@ version: "3.1"
 
 stories:
 
-- story: path 1
+
+- story: climate change path 1
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: affirm
+  - intent: goodnews
+  - action: utter_goodnews
+  - action: utter_badnews
+
+- story: climate change path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: badnews
+  - action: utter_badnews
+
+- story:  weather forecast path 1
+  steps:
+  - intent: ask_weather
   - action: utter_ask_city
   - intent: city
   - action: location_form
@@ -15,50 +29,8 @@ stories:
   - action: utter_gratitude
 
 
-- story: path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: deny
-  - action: utter_goodbye
 
-
-- story: path 3
-  steps: 
-  - intent: greet
-  - action: utter_greet
-  - intent: goodbye
-  - action: utter_goodbye
-
-
-- story: path 4
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: affirm
-  - action: utter_ask_city
-  - intent: city
-  - action: location_form
-  - action: action_weather_forecast
-  - intent: goodbye
-  - action: utter_goodbye
-
-
-- story: path 5
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: affirm
-  - action: utter_ask_city
-  - intent: city
-  - action: location_form
-  - action: action_weather_forecast
-  - intent: gratitude
-  - action: utter_gratitude
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: path 6
+- story: weather forecast path 2
   steps:
   - intent: ask_weather
   - action: utter_ask_city
@@ -70,15 +42,20 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: path 7
-  steps: 
-  - intent: greet
-  - action: utter_greet
-  - intent: gratitude
-  - action: utter_gratitude
+
+- story: weather forecast path 3
+  steps:
+  - intent: ask_weather
+  - action: utter_ask_city
+  - intent: city
+  - action: location_form
+  - action: action_weather_forecast
+  - intent: goodbye
+  - action: utter_goodbye
 
 
-- story: path 8
+
+- story: iambot path 1
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
