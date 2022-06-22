@@ -10,6 +10,7 @@ stories:
   - intent: goodnews
   - action: utter_goodnews
   - action: utter_badnews
+  - action: utter_regions
 
 - story: climate change path 2
   steps:
@@ -17,6 +18,7 @@ stories:
   - action: utter_greet
   - intent: badnews
   - action: utter_badnews
+  - action: utter_regions
 
 - story:  weather forecast path 1
   steps:
