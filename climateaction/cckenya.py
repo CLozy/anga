@@ -9,3 +9,6 @@ def coastal_region(region):
     news_headlines = newsapi.get_top_headlines(
         q=f'how {region} region of kenya is affected by climate change', language='en')
     return news_headlines
+
+sources = newsapi.get_sources()
+print(sources)

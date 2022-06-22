@@ -1,0 +1,44 @@
+{
+    "coastal region": {
+        "image": " ",
+        "articles": {
+            "art1": {
+                "url": " ",
+                "preview": " "
+            },
+            "art2": {
+                "url": " ",
+                "preview": " "
+            }
+        },
+        "videos": {
+            "vid1": {
+                "url": " "
+            },
+            "vid2": {
+                "url": " "
+            }
+        }
+    },
+    "northern region": {
+        "image": " ",
+        "articles": {
+            "art1": {
+                "url": " ",
+                "preview": " "
+            },
+            "art2": {
+                "url": " ",
+                "preview": " "
+            }
+        },
+        "videos": {
+            "vid1": {
+                "url": " "
+            },
+            "vid2": {
+                "url": " "
+            }
+        }
+    }
+}
