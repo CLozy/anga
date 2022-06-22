@@ -12,10 +12,30 @@ intents:
 
 responses:
   utter_greet:
-  - text: "Hey, I am Anga. Would you like to know the current weather forecast ?"
-  - text: "Hi, my name is Anga. Can i tell you the weather forecast?"
-  - text: "Hello, I'm Anga. Wanna know about the weather today?"
+  - text: "Hey, I'm Anga , your local climate change informant .Climate change refers to weather variations/patterns that persits over a long period of time and it is used as a meter to assess the earth's climatic equilibrium. 
+           The rapid the change the more extreme weather conditions get on earth , disrupting the earths ecosystem even causing mass extinctions. 
+            We are the main cause of this rapid shift, which is ironic considering how badly its affecting us. 
+            With that i got good news and bad news for you, which one do you wanna start with?."
+    buttons:
+    - title: "goodnews😃"
+      payload: "/goodnews"
+    - tite: "badnews🙁"
+      payload: "/badnews"
 
+  utter_goodnews:
+  - text: "Well good news is , we can take action to reduce adverse effects and adapt to our current climate situation, we are in this together :). Onto the bad news :("
+
+  utter_badnews: 
+  - text: "Bad news is climate change is an ongoing process and we cant go back in time, unless you have just invented a time machine ⏲️?, if so reset back to 1760 , before the industrial revolution and warn great britain, if not well we are stuck in this timeline and have to understand how climate change is affecting us locally and how to adapt to it. 
+            To better understand this issue , I'm going to tell the climate story of our country Kenya.
+            Which region do you want to start with? "
+    image: ""
+    buttons:
+    - title: ""
+
+  utter_affirm:
+  - text: "great, "
+  
 
   utter_weather:
   - text: "This is the current weather forecast {city}"
