@@ -1,44 +1,17 @@
 {
-    "coastal region": {
-        "image": " ",
-        "articles": {
-            "art1": {
-                "url": "https://www.msn.com/en-xl/news/other/kenya-climate-change-taking-a-toll-on-coastal-towns/ar-AAQfHRg ",
-                "preview": " "
-            },
-            "art2": {
-                "url": "https://ww3.rics.org/uk/en/journals/land-journal/how-does-climate-change-affect-coastal-regions-.html ",
-                "preview": " "
-            }
+    "kenya": {
+        "coast": {
+            "image": " ",
+            "articles": [
+                "https://www.msn.com/en-xl/news/other/kenya-climate-change-taking-a-toll-on-coastal-towns/ar-AAQfHRg ",
+                "https://ww3.rics.org/uk/en/journals/land-journal/how-does-climate-change-affect-coastal-regions-.html "
+            ],
+            "videos": []
         },
-        "videos": {
-            "vid1": {
-                "url": " "
-            },
-            "vid2": {
-                "url": " "
-            }
-        }
-    },
-    "northern region": {
-        "image": " ",
-        "articles": {
-            "art1": {
-                "url": " ",
-                "preview": " "
-            },
-            "art2": {
-                "url": " ",
-                "preview": " "
-            }
-        },
-        "videos": {
-            "vid1": {
-                "url": " "
-            },
-            "vid2": {
-                "url": " "
-            }
+        "northeasterneastern": {
+            "image": " ",
+            "articles": [],
+            "videos": []
         }
     }
 }

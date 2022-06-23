@@ -1,97 +1,95 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodnews
-  - badnews
-  - goodbye
-  - coast
-  - central
-  - northeasterneastern
-  - riftvalley
-  - westernnyanza
-  - affirm
-  - deny
-  - city
-  - gratitude
-  - ask_weather
-  - bot_challenge
-
+- affirm
+- ask_weather
+- badnews
+- bot_challenge
+- city
+- deny
+- goodbye
+- goodnews
+- gratitude
+- greet
+- region
 responses:
   utter_greet:
-  - text: "Hey, I'm Anga , your local climate change informant .Climate change refers to weather variations/patterns that persits over a long period of time and it is used as a meter to assess the earth's climatic equilibrium.\n
-           The rapid the change the more extreme weather conditions get on earth , disrupting the earths ecosystem even causing mass extinctions. \n
-           We are the main cause of this rapid shift, which is ironic considering how badly its affecting us. \n
-           With that i got good news and bad news for you, which one do you wanna start with?."
+  - text: |-
+      Hey, I'm Anga , your local climate change informant .Climate change refers to weather variations/patterns that persits over a long period of time and it is used as a meter to assess the earth's climatic equilibrium.
+       
+      The rapid the change the more extreme weather conditions get on earth , disrupting the earths ecosystem even causing mass extinctions. 
+       
+      We are the main cause of this rapid shift, which is ironic considering how badly its affecting us.
+ 
+      With that i got good news and bad news for you, which one do you wanna start with?.
     buttons:
-    - title: "goodnews😃"
-      payload: "/goodnews"
-    - title: "badnews🙁"
-      payload: "/badnews"
-
+    - title: goodnews😃
+      payload: /goodnews
+    - title: badnews🙁
+      payload: /badnews
   utter_goodnews:
-  - text: "Well good news is , we can take action to reduce adverse effects and adapt to our current climate situation, we are in this together🌍. \n Onto the bad news :("
-
-  utter_badnews: 
-  - text: "Bad news is climate change is an ongoing process and we cant go back in time, unless you have just invented a time machine ⏲️?, if so reset back to 1760 , before the industrial revolution and warn great britain, if not well we are stuck in this timeline and have to understand how climate change is affecting us locally and how to adapt to it.\n  
-           To better understand this issue , I'm going to tell the climate story of our country Kenya.\n
-            "
-    image: "http://maps.maphill.com/kenya/simple-maps/political-map/cropped-outside/free-fancy-political-simple-map-of-kenya-cropped-outside.jpg"
-
-  utter_regions: 
-  - text: "Which region do you want to start with? " 
+  - text: |-
+      Well good news is , we can take action to reduce adverse effects and adapt to our current climate situation, we are in this together🌍. 
+      Onto the bad news :(
+  utter_badnews:
+  - text: |-
+      Bad news is climate change is an ongoing process and we cant go back in time, unless you have just invented a time machine ⏲️?, if so reset back to 1760 , before the industrial revolution and warn great britain, if not well we are stuck in this timeline and have to understand how climate change is affecting us locally and how to adapt to it.
+       
+      To better understand this issue , I'm going to tell the climate story of our country.
+       
+    image: http://maps.maphill.com/kenya/simple-maps/political-map/cropped-outside/free-fancy-political-simple-map-of-kenya-cropped-outside.jpg
+  utter_regions:
+  - text: 'Which region do you want to start with? '
     buttons:
-    - title: "Coast"
-      payload: "/coast"
-    - title: "Central"
-      payload: "/central"
-    - title: "North Eastern and Eastern"
-      payload: "/northeasterneastern"
-    - title: "Rift valley"
-      payload: "/riftvalley"
-    - title: "Western and Nyanza"
-      payload: "/westernnyanza"
-
-  utter_coast:
-    - text: ""
-
+    - title: Coast
+      payload: /region{"region":"coast"}
+    - title: Central
+      payload: /region{"region":"central"}
+    - title: North Eastern and Eastern
+      payload: /region{"region":"northeasterneastern"}
+    - title: Rift valley
+      payload: /region{"region":"riftvalley"}
+    - title: Western and Nyanza
+      payload: /region{"region":"westernnyanza"}
   utter_weather:
-  - text: "This is the current weather forecast {city}"
-
+  - text: This is the current weather forecast {city}
   utter_ask_city:
-  - text: "What is the location?"
-
+  - text: What is the location?
   utter_goodbye:
-  - text: "Bye"
-
+  - text: Bye
   utter_gratitude:
-  - text: "Welcome"
-  - text: "Anytime"
-  - text: "You are welcome"
-
+  - text: Welcome
+  - text: Anytime
+  - text: You are welcome
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-
+  - text: I am a bot, powered by Rasa.
 entities:
+- region
 - city
-
 slots:
   city:
     type: text
     mappings:
     - type: from_entity
       entity: city
-
-
+  region:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: region
 forms:
   location_form:
     required_slots:
-      - city
-
+    - city
+  region_form:
+    required_slots:
+    - region
 actions:
-  - action_weather_forecast
- 
+- action_region_climate
+- action_weather_forecast
+- utter_badnews
+- utter_goodnews
+- utter_greet
+- utter_regions
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

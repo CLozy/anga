@@ -5,29 +5,6 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 
-# This is a simple example for a custom action which utters "Hello World!"
-
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
-
-
-
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
@@ -35,6 +12,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
 from weatherpkg.weather import get_weather_data
+from climateaction.cckenya import region_data
 
 
 class ActionWeatherForecast(Action):
@@ -63,7 +41,23 @@ class ActionWeatherForecast(Action):
 
         return []
 
-    
+
+class ActionRegionClimate(Action):
+
+    def name(self) -> Text:
+        return "action_region_climate"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        region_slot_value = tracker.get_slot("region")
+        articles, videos = region_data(region_slot_value)
+
+        for art in articles:
+            dispatcher.utter_message(attachment=art)
+
+        return []
 
 
 

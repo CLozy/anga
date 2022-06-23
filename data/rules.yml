@@ -18,6 +18,23 @@ rules:
     - requested_slot: null
   - action: action_weather_forecast
 
+
+- rule: Activate region form
+  steps:
+  - intent: region
+  - action: region_form
+  - active_loop: region_form
+
+- rule: Submit region form
+  condition: 
+  - active_loop: region_form
+  steps:
+  - action: region_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_region_climate
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye

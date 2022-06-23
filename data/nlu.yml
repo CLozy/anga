@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
@@ -13,42 +12,21 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodnews
   examples: |
     - goodnews
     - good news
-
 - intent: badnews
   examples: |
     - badnews
     - bad news
-
-- intent: coast
+- intent: region
   examples: |
-    - coast
-    - Coast
-
-- intent: central
-  examples: |
-    - central
-    - Central
-
-- intent: northeasterneastern
-  examples: |
-    - northeasterneastern
-    - north eastern eastern
-
-- intent: riftvalley
-  examples: |
-    - riftvalley
-    - rift valley
-
-- intent: westernnyanza
-  examples: |
-    - westernnyanza
-    - western nyanza
-
+    - [coast](region)
+    - [central](region)
+    - [northeasterneastern](region)
+    - [riftvalley](region)
+    - [westernnyanza](region)
 - intent: affirm
   examples: |
     - yes
@@ -57,7 +35,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -67,19 +44,15 @@ nlu:
     - don't like that
     - no way
     - not really
-
-
 - intent: city
   examples: |
-    - my current location is [nyeri]{"entity":"city"}
+    - my current location is [nyeri](city)
     - Location is [Mombasa](city)
     - I stay in [Nairobi](city)
     - My location is [johannesburg](city)
     - Am in [london](city)
     - Residing in [washington](city)
-    -[singapore](city)
-
-
+    - [singapore](city)
 - intent: gratitude
   examples: |
     - Thank you
@@ -87,22 +60,18 @@ nlu:
     - Gracious
     - Thank you very much
     - Thanks anga
-
 - intent: ask_weather
   examples: |
     - whats the weather today?
     - tell me about the weather.
     - weather forecast?
     - is it going to rain?
-
 - intent: goodbye
   examples: |
     - bye
     - goodbye
     - see ya
     - bye anga
-
-    
 - intent: bot_challenge
   examples: |
     - are you a bot?
