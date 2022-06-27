@@ -1,7 +1,7 @@
 {
     "kenya": {
         "coast": {
-            "image": " ",
+            "image": "http://maps.maphill.com/kenya/coast/maps/political-map/single-color-outside/free-fancy-political-map-of-coast-single-color-outside.jpg",
             "preview": "",
             "articles": [
                 "https://www.msn.com/en-xl/news/other/kenya-climate-change-taking-a-toll-on-coastal-towns/ar-AAQfHRg ",
@@ -10,6 +10,24 @@
             "videos": []
         },
         "northeasterneastern": {
+            "image": " ",
+            "preview": "",
+            "articles": [],
+            "videos": []
+        },
+        "central": {
+            "image": " ",
+            "preview": "",
+            "articles": [],
+            "videos": []
+        },
+        "riftvalley": {
+            "image": " ",
+            "preview": "",
+            "articles": [],
+            "videos": []
+        },
+        "westernnyanza": {
             "image": " ",
             "preview": "",
             "articles": [],
