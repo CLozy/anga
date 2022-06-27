@@ -29,6 +29,7 @@ responses:
   utter_goodnews:
   - text: |-
       Well good news is , we can take action to reduce adverse effects and adapt to our current climate situation, we are in this together🌍. 
+      
       Onto the bad news :(
   utter_badnews:
   - text: |-
