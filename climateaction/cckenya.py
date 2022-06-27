@@ -13,10 +13,12 @@ def region_data(region):
     for reg in data['kenya']:
         if reg == region:
             reg_data = data['kenya'][reg]
+            reg_image = reg_data['image']
+            preview = reg_data['preview']
             articles = reg_data['articles']
             videos = reg_data['videos']
 
     
-    return articles ,videos
+    return reg_image, preview, articles ,videos
 
 # print(region_data("coast"))
