@@ -37,7 +37,7 @@ responses:
        
       To better understand this issue , I'm going to tell the climate story of our country.
        
-    image: http://maps.maphill.com/kenya/simple-maps/political-map/cropped-outside/free-fancy-political-simple-map-of-kenya-cropped-outside.jpg
+    image: http://maps.maphill.com/kenya/maps/satellite-map/darken/land-only/free-fancy-darken-land-only-satellite-map-of-kenya.jpg
   utter_regions:
   - text: 'Which region do you want to start with? '
     buttons:
