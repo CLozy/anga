@@ -24,9 +24,11 @@ nlu:
   examples: |
     - [coast](region)
     - [central](region)
+    - [north eastern and eastern](region)
     - [northeasterneastern](region)
     - [riftvalley](region)
     - [westernnyanza](region)
+    - [western and nyanza](region)
 - intent: affirm
   examples: |
     - yes

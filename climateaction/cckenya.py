@@ -10,15 +10,14 @@ def region_data(region):
     with open("climateaction\climatedata.json", "r") as file:
         data = json.load(file)
     
+    reg_info = {}
     for reg in data['kenya']:
         if reg == region:
             reg_data = data['kenya'][reg]
-            reg_image = reg_data['image']
-            preview = reg_data['preview']
-            articles = reg_data['articles']
-            videos = reg_data['videos']
-
-    
-    return reg_image, preview, articles ,videos
+            reg_info['reg_image'] = reg_data['image']
+            reg_info['preview'] = reg_data['preview']
+            reg_info['articles'] = reg_data['articles']
+            reg_info['videos'] = reg_data['videos']
+    return reg_info
 
 # print(region_data("coast"))

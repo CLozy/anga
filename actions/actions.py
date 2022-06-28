@@ -52,16 +52,22 @@ class ActionRegionClimate(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         region_slot_value = tracker.get_slot("region")
-        reg_image, preview, articles, videos = region_data(region_slot_value)
+        reg_info = region_data(region_slot_value)
 
-        dispatcher.utter_message(image=reg_image)
-        dispatcher.utter_message(text=preview)
+        reg_img = reg_info['reg_image']
+        reg_preview = reg_info['preview']
+        reg_articles = reg_info['articles']
+        reg_videos = reg_info['videos']
 
-        for art in articles:
-            dispatcher.utter_message(attachment=art)
+        dispatcher.utter_message(image = reg_img)
+        dispatcher.utter_message(text= reg_preview)
 
-        for vid in videos:
-            dispatcher.utter_message(attachment=vid)
+        for art in reg_articles:
+            dispatcher.utter_message(text =art)
+
+
+        for vid in reg_videos:
+            dispatcher.utter_message(text =vid)
 
         return []
 
