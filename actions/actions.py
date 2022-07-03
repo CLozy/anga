@@ -11,14 +11,14 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
-from weatherpkg.weather import get_weather_data
+from weatherpkg.weather import get_current_weather, get_daily_weather
 from climateaction.cckenya import region_data
 
 
-class ActionWeatherForecast(Action):
+class ActionCurrentWeatherForecast(Action):
 
     def name(self) -> Text:
-        return "action_weather_forecast"
+        return "current_weather_forecast"
 
 
     def run(self, dispatcher: CollectingDispatcher,
@@ -26,26 +26,41 @@ class ActionWeatherForecast(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
 
-        city_slot_value = tracker.get_slot("city")
-        forecast = get_weather_data(city_slot_value)
+        city = tracker.get_slot("city")
+        forecast = get_current_weather(city)
 
-        if 'invalid_city' in forecast.keys() and  forecast['invalid_city'] == ' ': 
-            dispatcher.utter_message(text="Please enter valid city name ")
-
-        else:
-            message = f"The current weather in {city_slot_value}  for {forecast['datetime']} displays {forecast['desc']}.\nTemperature: {forecast['temp_celsious']} | {forecast['temp_farenheit']}. \nHumidity: {forecast['humidity']}. \nWind: {forecast['wind']}"
-            
-            dispatcher.utter_message(text = "Okay, Looking at the sky :)")
-            dispatcher.utter_message(text=message)
+        dispatcher.utter_message(text = f"current weather is {forecast['symbolPhrase']}")
+        dispatcher.utter_message(text = forecast['symbolimg'])
+        dispatcher.utter_message(text = f"Feels like {forecast['feelsLikeTemp']}°C, with precipitaion of {forecast['precipProb']}% and humidity level of {forecast['relHumidity']}%")
        
+        return []
 
+class ActionDailyWeatherForecast(Action):
+
+    def name(self) -> Text:
+        return "daily_weather_forecast"
+
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+
+        city = tracker.get_slot("city")
+        date = tracker.get_slot("date")
+        daily_forecast = get_current_weather(city, date)
+
+        dispatcher.utter_message(text = f"Weather in {city} for {date} will be {daily_forecast['symbolPhrase']}")
+        dispatcher.utter_message(text = daily_forecast['symbolimg'])
+        dispatcher.utter_message(text = f" will have a max temp of {daily_forecast['maxTemp']}°C, with precipitaion of {daily_forecast['precipAccum']}%")
+       
         return []
 
 
 class ActionRegionClimate(Action):
 
     def name(self) -> Text:
-        return "action_region_climate"
+        return "daily_region_climate"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -59,7 +74,10 @@ class ActionRegionClimate(Action):
         reg_articles = reg_info['articles']
         reg_videos = reg_info['videos']
 
-        dispatcher.utter_message(image = reg_img)
+
+        for img in reg_img:
+            dispatcher.utter_message(image =img)
+
         dispatcher.utter_message(text= reg_preview)
 
         for art in reg_articles:

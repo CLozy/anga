@@ -1,82 +1,94 @@
 
 import requests
+import pandas as pd
+import json
+import os
 import re
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
 
 from datetime import datetime as dt
 
-# def weather_data(city):
 
-#     USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36"
-#     LANGUAGE = "en-KE,en;q=0.5"
+# params = {
+#     "user": "clozymwangs",
+#     "password": "Yd9DchqMli5x"
+# }
 
-#     URL = "https://www.google.com/search?lr=lang_en&ie=UTF-8&q=weather"
-#     URL+= city
+# get_token = requests.post(url = 'https://pfa.foreca.com/authorize/token?', params=params)
+# token = get_token.json()
+# print(token)
 
-#     session = requests.Session()
-#     session.headers['User-Agent'] = USER_AGENT
-#     session.headers['Accept-Language'] = LANGUAGE
-#     session.headers['Content-Language'] = LANGUAGE
-#     html = session.get(URL)
-#     # create a new soup
-#     soup = BeautifulSoup(html.text, "html.parser")
+def get_symbols(symbol):
+    with open("weatherpkg\weathersymbols.json", "r") as file:
+        symbols = json.load(file)
+    
+    for code in symbols['codes']:
+        if symbol == code['symbol']:
+            symbol_code = code
+    weather_symbol_code = symbol_code
 
-#         # store all results on this dictionary
-#     result = {}
-#     # extract region
-#     result['region'] = soup.find("div", attrs={"id": "wob_loc"}).text
+    return weather_symbol_code
 
-#     #get temp in celsius and farenheit
-
-#     result['temp_now_c'] = soup.find("span", attrs={"id": "wob_tm"}).text + "°C"
-#     result['temp_now_f'] = soup.find("span", attrs={"id": "wob_ttm"}).text + "°F"
-#     # get the day and hour now
-#     result['dayhour'] = soup.find("div", attrs={"id": "wob_dts"}).text
-#     # get the actual weather
-#     result['weather_now'] = soup.find("span", attrs={"id": "wob_dc"}).text
-
-#     # get the precipitation
-#     result['precipitation'] = soup.find("span", attrs={"id": "wob_pp"}).text
-#     # get the % of humidity
-#     result['humidity'] = soup.find("span", attrs={"id": "wob_hm"}).text
-#     # extract the wind
-#     result['wind'] = soup.find("span", attrs={"id": "wob_ws"}).text
-
-#     #extract image
-#     image_url= str(soup.select( "#wob_tci")[0]).split()
-
-#     result['img'] = "https:" + re.search(r'//\w+.\w+.\w+/\w+.+\w+', image_url[-1]).group()
+    
 
 
-#     return soup
+def get_city_id(city):
+
+    load_dotenv()
+
+    api_key = os.getenv('FORECA_API_KEY')
+
+    headers = {
+        "Authorization" : f"Bearer {api_key}"
+    }
+
+    location_response = requests.get(url = f'https://pfa.foreca.com/api/v1/location/search/{city}?lang=en', headers=headers)
+    location = location_response.json()
+
+    city_id = location['locations'][0]['id']
 
 
-def get_weather_data(city):
+    return city_id, headers
 
-    BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
 
-    API_KEY = open(r"weatherpkg\openweatherapikey.txt", "r").read()
+def get_current_weather(city):
 
-    url = BASE_URL + "appid=" + API_KEY + "&q=" + city
+    # city_lon = location['locations'][0]['lon']
+    city_id, headers = get_city_id(city)
 
-    response = requests.get(url).json()
-    weather_data = {}
-    if response['cod'] == '404':
-        weather_data['invalid_city'] = " "
+    current_weather_response = requests.get(url = f"https://pfa.foreca.com/api/v1/current/{city_id}", headers=headers) 
+    current_weather = current_weather_response.json()
 
-    else:
-        # temperature
-        temp_celsious = (response['main']['temp'])-273.15
-        weather_data['temp_celsious'] = "%.2f" % temp_celsious + "°C"
+    symbol_codes = get_symbols(current_weather['current']['symbol'])
 
-        weather_data['temp_farenheit'] = "%.2f" % (
-            temp_celsious * (9/5) + 32) + "°F"
+    current_weather_forecast = current_weather['current']
+    current_weather_forecast['symbolimg'] = symbol_codes['img']
 
-        weather_data['desc'] = response['weather'][0]['description']
-        weather_data['humidity'] = str(response['main']['humidity']) + "%"
-        weather_data['wind'] = str(response['wind']['speed']) + "m/s"
-        weather_data['datetime'] = dt.now().strftime("%d  %b %Y | %I:%M:%S %p")
+    return current_weather_forecast
 
-    return weather_data
+def get_daily_weather(city, date):
 
-# print(get_weather_data("nairobi"))
+    city_id, headers = get_city_id(city)
+
+    daily_weather_response = requests.get(url = f"https://pfa.foreca.com/api/v1/forecast/daily/{city_id}", headers=headers)
+    daily_weather = daily_weather_response.json()
+
+    for forecast in daily_weather['forecast']:
+        forecast['date_name'] = pd.Timestamp(forecast['date']).day_name().lower()
+
+
+    for forecast in daily_weather['forecast']:
+        if date.lower() == forecast['date_name']:
+            daily_forecast = forecast
+    daily_weather_forecast = daily_forecast
+
+    symbol_codes = get_symbols(daily_weather_forecast['symbol'])
+    daily_weather_forecast['symbolphrase']= symbol_codes['phrase']
+    daily_weather_forecast['symbolimg']= symbol_codes['img']
+    return daily_weather_forecast
+
+
+# print(get_current_weather("london"))
+# print("------------------")
+# print(get_daily_weather("london", "monday"))

@@ -16,7 +16,39 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  - action: action_weather_forecast
+  - action: current_weather_forecast
+
+- rule: Activate location form
+  steps:
+  - intent: weather_current_city
+  - action: location_form
+  - active_loop: location_form
+
+- rule: Submit location form
+  condition: 
+  - active_loop: location_form
+  steps:
+  - action: location_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: current_weather_forecast
+
+- rule: Activate location date form
+  steps:
+  - intent: ask_weather_daily
+  - action: location_date_form
+  - active_loop: location_date_form
+
+- rule: Submit location date form
+  condition: 
+  - active_loop: location_date_form
+  steps:
+  - action: location_date_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: daily_weather_forecast
 
 
 - rule: Activate region form
@@ -34,6 +66,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_region_climate
+
 
 - rule: Say goodbye anytime the user says goodbye
   steps:

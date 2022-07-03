@@ -1,7 +1,10 @@
 version: '3.1'
 intents:
 - affirm
-- ask_weather
+- ask_weather_current
+- weather_current_city
+- ask_weather_daily
+- ask_climate
 - badnews
 - bot_challenge
 - city
@@ -12,14 +15,21 @@ intents:
 - greet
 - region
 responses:
+
+
   utter_greet:
+  - text: hello
+  - text: ssup
+  - text: hi.
+
+  utter_ask_climate:
   - text: |-
-      Hey, I'm Anga , your local climate change informant .Climate change refers to weather variations/patterns that persits over a long period of time and it is used as a meter to assess the earth's climatic equilibrium.
+      Climate change refers to weather variations/patterns that persits over a long period of time and it is used as a meter to assess the earth's climatic equilibrium.
        
       The rapid the change the more extreme weather conditions get on earth , disrupting the earths ecosystem even causing mass extinctions. 
        
       We are the main cause of this rapid shift, which is ironic considering how badly its affecting us.
- 
+
       With that i got good news and bad news for you, which one do you wanna start with?.
     buttons:
     - title: goodnews😃
@@ -29,7 +39,7 @@ responses:
   utter_goodnews:
   - text: |-
       Well good news is , we can take action to reduce adverse effects and adapt to our current climate situation, we are in this together🌍. 
-      
+
       Onto the bad news :(
   utter_badnews:
   - text: |-
@@ -45,11 +55,11 @@ responses:
       payload: /region{"region":"coast"}
     - title: Central
       payload: /region{"region":"central"}
-    - title: North Eastern and Eastern
+    - title: North Eastern Eastern
       payload: /region{"region":"northeasterneastern"}
     - title: Rift valley
       payload: /region{"region":"riftvalley"}
-    - title: Western and Nyanza
+    - title: Western Nyanza
       payload: /region{"region":"westernnyanza"}
   utter_weather:
   - text: This is the current weather forecast {city}
@@ -66,6 +76,7 @@ responses:
 entities:
 - region
 - city
+- date
 slots:
   city:
     type: text
@@ -77,16 +88,32 @@ slots:
     mappings:
     - type: from_entity
       entity: region
+  date:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: date
 forms:
   location_form:
+    ignored_intents:
+    - ask_weather_daily
     required_slots:
     - city
   region_form:
     required_slots:
     - region
+  location_date_form:
+    ignored_intents:
+    - city
+    - weather_current_city
+    required_slots:
+    - city
+    - date
+  
 actions:
 - action_region_climate
-- action_weather_forecast
+- current_weather_forecast
+- daily_weather_forecast
 - utter_badnews
 - utter_goodnews
 - utter_greet

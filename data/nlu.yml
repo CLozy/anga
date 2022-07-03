@@ -62,12 +62,33 @@ nlu:
     - Gracious
     - Thank you very much
     - Thanks anga
-- intent: ask_weather
+
+- intent: ask_weather_current
   examples: |
-    - whats the weather today?
     - tell me about the weather.
     - weather forecast?
     - is it going to rain?
+    - how the weather look today?
+
+- intent: weather_current_city
+  examples: |
+    - whats the weather in [mombasa](city)?
+    - How does the weather look like in [johannesburg](city)
+
+- intent: ask_weather_daily
+  examples: |
+    - Hey, anga,ill be travelling to [singapore](city) on [sunday](date) what will the weather be like?
+    - is it going to rain [friday](date) in [nairobi](city)?
+    - whats the weather in [berlin](city) [tuesday](date)?
+
+- intent: ask_climate
+  examples: |
+   - Hey anga, how does climate change affect my country?
+   - hi , anga  tell me about cimate change.
+   - what is climate change?
+   - Ssup anga, what do you know about climate change?
+
+
 - intent: goodbye
   examples: |
     - bye
