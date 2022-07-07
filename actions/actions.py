@@ -30,7 +30,7 @@ class ActionCurrentWeatherForecast(Action):
         forecast = get_current_weather(city)
 
         dispatcher.utter_message(text = f"current weather is {forecast['symbolPhrase']}")
-        dispatcher.utter_message(text = forecast['symbolimg'])
+        dispatcher.utter_message(image = forecast['symbolimg'])
         dispatcher.utter_message(text = f"Feels like {forecast['feelsLikeTemp']}°C, with precipitaion of {forecast['precipProb']}% and humidity level of {forecast['relHumidity']}%")
        
         return []
@@ -48,10 +48,10 @@ class ActionDailyWeatherForecast(Action):
 
         city = tracker.get_slot("city")
         date = tracker.get_slot("date")
-        daily_forecast = get_current_weather(city, date)
+        daily_forecast = get_daily_weather(city, date)
 
-        dispatcher.utter_message(text = f"Weather in {city} for {date} will be {daily_forecast['symbolPhrase']}")
-        dispatcher.utter_message(text = daily_forecast['symbolimg'])
+        dispatcher.utter_message(text = f"Weather in {city} for {date} will be {daily_forecast['symbolphrase']}")
+        dispatcher.utter_message(image = daily_forecast['symbolimg'])
         dispatcher.utter_message(text = f" will have a max temp of {daily_forecast['maxTemp']}°C, with precipitaion of {daily_forecast['precipAccum']}%")
        
         return []
@@ -60,7 +60,7 @@ class ActionDailyWeatherForecast(Action):
 class ActionRegionClimate(Action):
 
     def name(self) -> Text:
-        return "daily_region_climate"
+        return "action_region_climate"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,

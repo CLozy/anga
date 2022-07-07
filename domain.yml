@@ -1,10 +1,9 @@
 version: '3.1'
 intents:
 - affirm
-- ask_weather_current
-- weather_current_city
-- ask_weather_daily
 - ask_climate
+- ask_weather_current
+- ask_weather_daily
 - badnews
 - bot_challenge
 - city
@@ -14,14 +13,12 @@ intents:
 - gratitude
 - greet
 - region
+- weather_current_city
 responses:
-
-
   utter_greet:
   - text: hello
   - text: ssup
   - text: hi.
-
   utter_ask_climate:
   - text: |-
       Climate change refers to weather variations/patterns that persits over a long period of time and it is used as a meter to assess the earth's climatic equilibrium.
@@ -71,12 +68,20 @@ responses:
   - text: Welcome
   - text: Anytime
   - text: You are welcome
+
+  utter_rephrase:
+  - text: "Sorry, i couldn't get that , could you rephrase."
+
+  utter_faq:
+  - text: "Hi, am Anga🤖. Your local climate change and weather informant. \nHere's an FAQ of questions you can ask 😃. \n  Weather info: To get weather info for cities around the globe.  \n 1.Whats the current weather? \n 2.whats the weather in kisumu tomorrow? \n 3.tell me about weather in mombasa on sunday? \n \nclimate info: To get local kenya climate news per region , regions: Coast , Central, Riftvalley, WesternNyanza, NorthEasternEastern. \n 1.How is kenya affected by climate change. \n 2.How does climate change affect the kenyan coast?"
+
+
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+  - text: I am anga, powered by Rasa.
 entities:
-- region
 - city
 - date
+- region
 slots:
   city:
     type: text
@@ -109,13 +114,13 @@ forms:
     required_slots:
     - city
     - date
-  
 actions:
 - action_region_climate
 - current_weather_forecast
 - daily_weather_forecast
 - utter_badnews
 - utter_goodnews
+- utter_gratitude
 - utter_greet
 - utter_regions
 session_config:

@@ -131,3 +131,52 @@ stories:
     - requested_slot: null
   - active_loop: null
   - action: action_region_climate
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_weather_daily
+    entities:
+    - date: thursday
+    - city: nairobi
+  - action: location_date_form
+  - active_loop: location_date_form
+  - slot_was_set:
+    - city: nairobi
+  - slot_was_set:
+    - date: thursday
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: daily_weather_forecast
+  - intent: gratitude
+  - action: utter_gratitude
+
+- story: interactive_story_1
+  steps:
+  - intent: weather_current_city
+    entities:
+    - city: kisumu
+  - action: location_form
+  - active_loop: location_form
+  - slot_was_set:
+    - city: kisumu
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: current_weather_forecast
+
+- story: interactive_story_1
+  steps:
+  - intent: weather_current_city
+    entities:
+    - city: nakuru
+  - action: location_form
+  - active_loop: location_form
+  - slot_was_set:
+    - city: nakuru
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: current_weather_forecast

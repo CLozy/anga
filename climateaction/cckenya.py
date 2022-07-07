@@ -12,7 +12,7 @@ def region_data(region):
     
     reg_info = {}
     for reg in data['kenya']:
-        if reg == region:
+        if reg == region.lower():
             reg_data = data['kenya'][reg]
             reg_info['reg_image'] = reg_data['image']
             reg_info['preview'] = reg_data['preview']

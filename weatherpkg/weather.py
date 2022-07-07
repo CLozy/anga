@@ -76,7 +76,10 @@ def get_daily_weather(city, date):
 
     for forecast in daily_weather['forecast']:
         forecast['date_name'] = pd.Timestamp(forecast['date']).day_name().lower()
-
+    
+    if date.lower() == "tomorrow":
+        daily_weather_forecast = daily_weather['forecast'][1]
+        daily_weather_forecast['date_name'] = "tomorrow"
 
     for forecast in daily_weather['forecast']:
         if date.lower() == forecast['date_name']:
@@ -91,4 +94,5 @@ def get_daily_weather(city, date):
 
 # print(get_current_weather("london"))
 # print("------------------")
-# print(get_daily_weather("london", "monday"))
+# print(get_daily_weather("london","tuesday"))
+# print(get_daily_weather("london", "tomorrow"))
