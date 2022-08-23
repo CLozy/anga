@@ -13,6 +13,7 @@ nlu:
     - goodevening
     - good afternoon
     - ssup
+    - anga
 - intent: goodnews
   examples: |
     - goodnews
