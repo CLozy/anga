@@ -68,20 +68,25 @@ responses:
   - text: Welcome
   - text: Anytime
   - text: You are welcome
-
   utter_rephrase:
-  - text: "Sorry, i couldn't get that , could you rephrase."
-
+  - text: Sorry, i couldn't get that , could you rephrase.
   utter_faq:
-  - text: "Here's an FAQ 😃. \n  Weather info: To get weather info for cities around the globe.  \n 1.Whats the current weather? \n 2.whats the weather in kisumu tomorrow? \n 3.tell me about weather in mombasa on sunday? \n \nclimate info: To get local kenya climate news per region , regions: Coast , Central, Riftvalley, WesternNyanza, NorthEasternEastern. \n 1.How is kenya affected by climate change. \n 2.How does climate change affect the kenyan coast?"
-
-
+  - text: |-
+      Here's an FAQ 😃. 
+        Weather info: To get weather info for cities around the globe.  
+       1.Whats the current weather? 
+       2.whats the weather in kisumu tomorrow? 
+       3.tell me about weather in mombasa on sunday? 
+       
+      climate info: To get local kenya climate news per region , regions: Coast , Central, Riftvalley, WesternNyanza, NorthEasternEastern. 
+       1.How is kenya affected by climate change. 
+       2.How does climate change affect the kenyan coast?
   utter_iamabot:
   - text: I am anga, powered by Rasa.
 entities:
 - city
-- date
 - region
+- date
 slots:
   city:
     type: text
@@ -100,8 +105,6 @@ slots:
       entity: date
 forms:
   location_form:
-    ignored_intents:
-    - ask_weather_daily
     required_slots:
     - city
   region_form:
@@ -118,7 +121,10 @@ actions:
 - action_region_climate
 - current_weather_forecast
 - daily_weather_forecast
+- utter_ask_city
+- utter_ask_climate
 - utter_badnews
+- utter_goodbye
 - utter_goodnews
 - utter_gratitude
 - utter_greet

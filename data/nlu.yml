@@ -14,6 +14,7 @@ nlu:
     - good afternoon
     - ssup
     - anga
+    - hey anga
 - intent: goodnews
   examples: |
     - goodnews
@@ -57,6 +58,7 @@ nlu:
     - Am in [london](city)
     - Residing in [washington](city)
     - [singapore](city)
+    - [mombasa](city)
 - intent: gratitude
   examples: |
     - Thank you
@@ -71,12 +73,12 @@ nlu:
     - weather forecast?
     - is it going to rain?
     - how the weather look today?
-    - what the weather in [kisumu](city)
 - intent: weather_current_city
   examples: |
     - whats the weather in [mombasa](city)?
     - How does the weather look like in [johannesburg](city)
     - what the weather in [nakuru](city)
+    - is it cold in [embu](city)
 - intent: ask_weather_daily
   examples: |
     - Hey, anga,ill be travelling to [singapore](city) on [sunday](date) what will the weather be like?
@@ -84,12 +86,15 @@ nlu:
     - whats the weather in [berlin](city) [tuesday](date)?
     - whats the weather like on [thursday](date) in [nairobi](city)
     - tell me weather in [mombasa](city) [tomorrow](date)
+    - am going to dunda in [nairobi](city) on [friday](date), whats will the weather be then?
 - intent: ask_climate
   examples: |
     - Hey anga, how does climate change affect my country?
     - hi , anga  tell me about cimate change.
     - what is climate change?
     - Ssup anga, what do you know about climate change?
+    - hey anga, what do you know about climate change in kenya?
+    - what is the situation at the kenyan [coast](region) with regards to climate change
 - intent: goodbye
   examples: |
     - bye
