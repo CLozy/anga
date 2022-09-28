@@ -20,7 +20,7 @@ from datetime import datetime as dt
 # print(token)
 
 def get_symbols(symbol):
-    with open("weatherpkg\weathersymbols.json", "r") as file:
+    with open("weatherpkg/weathersymbols.json", "r") as file:
         symbols = json.load(file)
     
     for code in symbols['codes']:
