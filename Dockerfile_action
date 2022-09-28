@@ -1,0 +1,13 @@
+FROM python:3.8.14-slim-buster
+
+WORKDIR /anga2.0
+
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+
+COPY . .
+
+
+EXPOSE 5055
+
+CMD ["rasa", "run", "actions"]

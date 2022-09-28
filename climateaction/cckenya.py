@@ -1,13 +1,13 @@
 import json
 from newsapi import NewsApiClient
 
-API_KEY = open("climateaction\\newsapikey.txt", "r").read()
+API_KEY = open("climateaction/key.txt", "r").read()
 
 newsapi = NewsApiClient(API_KEY)
 
 
 def region_data(region):
-    with open("climateaction\climatedata.json", "r") as file:
+    with open("climateaction/climatedata.json", "r") as file:
         data = json.load(file)
     
     reg_info = {}

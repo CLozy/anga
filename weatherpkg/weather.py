@@ -44,7 +44,9 @@ def get_city_id(city):
     }
 
     location_response = requests.get(url = f'https://pfa.foreca.com/api/v1/location/search/{city}?lang=en', headers=headers)
+   
     location = location_response.json()
+
 
     city_id = location['locations'][0]['id']
 
@@ -96,3 +98,4 @@ def get_daily_weather(city, date):
 # print("------------------")
 # print(get_daily_weather("london","tuesday"))
 # print(get_daily_weather("london", "tomorrow"))
+
