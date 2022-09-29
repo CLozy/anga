@@ -26,7 +26,7 @@ Here's an FAQ 😃.
 * python 3.8
 * All in the requirements.txt file
 
-### Installing
+### Installing 
 
 1. clone the repo
 
@@ -34,14 +34,42 @@ Here's an FAQ 😃.
 git clone https://github.com/CLozy/anga.git
 ```
 
+2. move into the anga2.o directory and Install requirements.txt file
 
+```Bash
+pip install -r requirements.txt
+```
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+1. Train bot
+
+```Bash
+rasa train
 ```
-code blocks for commands
+2. run action server in terminal
+
+```Bash
+rasa run actions
 ```
+3. run rasa open source server in another terminal
+
+```Bash
+rasa run --enable-api --cors *
+```
+4. move into the website dir and run server
+
+```Bash
+python manage.py runserver
+```
+
+### Docker
+
+In the same dir as docker-compose.yml file run 
+
+```Bash
+docker compose up
+```
+
 
 
