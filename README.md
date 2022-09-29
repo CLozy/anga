@@ -34,7 +34,7 @@ Here's an FAQ 😃.
 git clone https://github.com/CLozy/anga.git
 ```
 
-2. move into the anga2.o directory and Install requirements.txt file
+2. move into the anga2.0 directory and Install requirements.txt file
 
 ```Bash
 pip install -r requirements.txt
