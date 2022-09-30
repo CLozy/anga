@@ -1,8 +1,0 @@
-{
-  "rule_only_slots": [],
-  "rule_only_loops": [
-    "location_form",
-    "region_form",
-    "location_date_form"
-  ]
-}

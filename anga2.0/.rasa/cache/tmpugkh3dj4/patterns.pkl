@@ -1,6 +1,0 @@
-[
-  {
-    "name": "city",
-    "pattern": "(\\beldoret\\b|\\bnakuru\\b|\\bkisumu\\b|\\bnairobi\\b|\\bmombasa\\b|\\bnyeri\\b)"
-  }
-]
