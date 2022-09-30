@@ -1,0 +1,4 @@
+.rasa/
+.git
+.cache
+*.pyc
