@@ -5,7 +5,7 @@ services:
       context: ./anga2.0
       dockerfile: Dockerfile_action
     ports:
-     - "5055:5055"
+     - "5058:5058"
 
   api:
     build: 
@@ -18,4 +18,4 @@ services:
       context: ./anga2.0
       dockerfile: Dockerfile_bot
     ports:
-      - "5005:5005"
+      - "5008:5008"
