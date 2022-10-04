@@ -12,4 +12,4 @@ EXPOSE 5005
 
 RUN rasa train
 
-CMD ["rasa", "run", "--enable-api", "--cors", "*"]
+CMD ["rasa", "run", "--enable-api", "-p", "5008" "--cors", "*"]

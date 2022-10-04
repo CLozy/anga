@@ -8,6 +8,6 @@ RUN pip install -r requirements.txt
 COPY . .
 
 
-EXPOSE 5055
+EXPOSE 5058
 
-CMD ["rasa", "run", "actions"]
+CMD ["rasa", "run", "actions", "-p", "5058"]
