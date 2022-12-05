@@ -1,0 +1,5 @@
+.rasa/
+.models/
+*.pyc
+*.cache
+*.pyc

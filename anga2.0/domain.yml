@@ -1,0 +1,134 @@
+version: '3.1'
+intents:
+- affirm
+- ask_climate
+- ask_weather_current
+- ask_weather_daily
+- badnews
+- bot_challenge
+- city
+- deny
+- goodbye
+- goodnews
+- gratitude
+- greet
+- region
+- weather_current_city
+responses:
+  utter_greet:
+  - text: hello
+  - text: ssup
+  - text: hi.
+  utter_ask_climate:
+  - text: |-
+      Climate change refers to weather variations/patterns that persits over a long period of time and it is used as a meter to assess the earth's climatic equilibrium.
+       
+      The rapid the change the more extreme weather conditions get on earth , disrupting the earths ecosystem even causing mass extinctions. 
+       
+      We are the main cause of this rapid shift, which is ironic considering how badly its affecting us.
+
+      With that i got good news and bad news for you, which one do you wanna start with?.
+    buttons:
+    - title: goodnews😃
+      payload: /goodnews
+    - title: badnews🙁
+      payload: /badnews
+  utter_goodnews:
+  - text: |-
+      Well good news is , we can take action to reduce adverse effects and adapt to our current climate situation, we are in this together🌍. 
+
+      Onto the bad news :(
+  utter_badnews:
+  - text: |-
+      Bad news is climate change is an ongoing process and we cant go back in time, unless you have just invented a time machine ⏲️?, if so reset back to 1760 , before the industrial revolution and warn great britain, if not well we are stuck in this timeline and have to understand how climate change is affecting us locally and how to adapt to it.
+       
+      To better understand this issue , I'm going to tell the climate story of our country.
+       
+    image: http://maps.maphill.com/kenya/maps/satellite-map/darken/land-only/free-fancy-darken-land-only-satellite-map-of-kenya.jpg
+  utter_regions:
+  - text: 'Which region do you want to start with? '
+    buttons:
+    - title: Coast
+      payload: /region{"region":"coast"}
+    - title: Central
+      payload: /region{"region":"central"}
+    - title: North Eastern Eastern
+      payload: /region{"region":"northeasterneastern"}
+    - title: Rift valley
+      payload: /region{"region":"riftvalley"}
+    - title: Western Nyanza
+      payload: /region{"region":"westernnyanza"}
+  utter_weather:
+  - text: This is the current weather forecast {city}
+  utter_ask_city:
+  - text: What is the location?
+  utter_goodbye:
+  - text: Bye
+  utter_gratitude:
+  - text: Welcome
+  - text: Anytime
+  - text: You are welcome
+  utter_rephrase:
+  - text: Sorry, i couldn't get that , could you rephrase.
+  utter_faq:
+  - text: |-
+      Here's an FAQ 😃. 
+        Weather info: To get weather info for cities around the globe.  
+       1.Whats the current weather? 
+       2.whats the weather in kisumu tomorrow? 
+       3.tell me about weather in mombasa on sunday? 
+       
+      climate info: To get local kenya climate news per region , regions: Coast , Central, Riftvalley, WesternNyanza, NorthEasternEastern. 
+       1.How is kenya affected by climate change. 
+       2.How does climate change affect the kenyan coast?
+  utter_iamabot:
+  - text: I am anga, powered by Rasa.
+entities:
+- city
+- region
+- date
+slots:
+  city:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: city
+  region:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: region
+  date:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: date
+forms:
+  location_form:
+    required_slots:
+    - city
+  region_form:
+    required_slots:
+    - region
+  location_date_form:
+    ignored_intents:
+    - city
+    - weather_current_city
+    required_slots:
+    - city
+    - date
+actions:
+- action_region_climate
+- current_weather_forecast
+- daily_weather_forecast
+- utter_ask_city
+- utter_ask_climate
+- utter_badnews
+- utter_goodbye
+- utter_goodnews
+- utter_gratitude
+- utter_greet
+- utter_regions
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

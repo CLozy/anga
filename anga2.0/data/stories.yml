@@ -1,0 +1,265 @@
+version: "3.1"
+
+stories:
+
+- story: climate change path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_climate
+  - action: utter_ask_climate
+  - intent: goodnews
+  - action: utter_goodnews
+  - action: utter_badnews
+  - action: utter_regions
+  - intent: region
+  - action: region_form
+  - action: action_region_climate
+
+
+- story: climate change path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_climate
+  - action: utter_ask_climate
+  - intent: badnews
+  - action: utter_badnews
+  - action: utter_regions
+  - intent: region
+  - action: region_form
+  - action: action_region_climate
+  - intent: gratitude
+  - action: utter_gratitude
+
+- story:  weather forecast path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_weather_current
+  - action: utter_ask_city
+  - intent: city
+  - action: location_form
+  - action: current_weather_forecast
+  - intent: gratitude
+  - action: utter_gratitude
+
+
+
+- story: weather forecast path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: weather_current_city
+  - action: location_form
+  - action: current_weather_forecast
+  - intent: gratitude
+  - action: utter_gratitude
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: weather forecast path 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_weather_daily
+  - action: location_date_form
+  - action: daily_weather_forecast
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: weather forecast path 4
+  steps:
+
+  - intent: ask_weather_current
+  - action: utter_ask_city
+  - intent: city
+  - action: location_form
+  - action: current_weather_forecast
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+
+- story: iambot path 1
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_climate
+  - action: utter_ask_climate
+  - intent: goodnews
+  - action: utter_goodnews
+  - action: utter_badnews
+  - action: utter_regions
+  - intent: region
+    entities:
+    - region: coast
+  - slot_was_set:
+    - region: coast
+  - action: region_form
+  - active_loop: region_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_region_climate
+  - intent: affirm
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_climate
+  - action: utter_ask_climate
+  - intent: goodnews
+  - action: utter_goodnews
+  - action: utter_badnews
+  - action: utter_regions
+  - intent: region
+    entities:
+    - region: northeasterneastern
+  - slot_was_set:
+    - region: northeasterneastern
+  - action: region_form
+  - active_loop: region_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_region_climate
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_weather_daily
+    entities:
+    - date: thursday
+    - city: nairobi
+  - action: location_date_form
+  - active_loop: location_date_form
+  - slot_was_set:
+    - city: nairobi
+  - slot_was_set:
+    - date: thursday
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: daily_weather_forecast
+  - intent: gratitude
+  - action: utter_gratitude
+
+- story: interactive_story_1
+  steps:
+  - intent: weather_current_city
+    entities:
+    - city: kisumu
+  - action: location_form
+  - active_loop: location_form
+  - slot_was_set:
+    - city: kisumu
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: current_weather_forecast
+
+- story: interactive_story_1
+  steps:
+  - intent: weather_current_city
+    entities:
+    - city: nakuru
+  - action: location_form
+  - active_loop: location_form
+  - slot_was_set:
+    - city: nakuru
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: current_weather_forecast
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_weather_current
+  - action: utter_ask_city
+  - intent: city
+    entities:
+    - city: mombasa
+  - action: location_form
+  - active_loop: location_form
+  - slot_was_set:
+    - city: mombasa
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: current_weather_forecast
+  - intent: ask_weather_daily
+    entities:
+    - city: nairobi
+    - date: friday
+  - slot_was_set:
+    - city: nairobi
+  - slot_was_set:
+    - date: friday
+  - action: location_date_form
+  - active_loop: location_date_form
+  - slot_was_set:
+    - city: nairobi
+  - slot_was_set:
+    - date: friday
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: daily_weather_forecast
+  - intent: weather_current_city
+    entities:
+    - city: embu
+  - action: location_form
+  - active_loop: location_form
+  - slot_was_set:
+    - city: embu
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: current_weather_forecast
+  - intent: ask_climate
+  - action: utter_ask_climate
+  - intent: goodnews
+  - action: utter_goodnews
+  - action: utter_badnews
+  - action: utter_regions
+  - intent: region
+    entities:
+    - region: westernnyanza
+  - slot_was_set:
+    - region: westernnyanza
+  - action: region_form
+  - active_loop: region_form
+  - slot_was_set:
+    - region: westernnyanza
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_region_climate
+  - intent: ask_climate
+    entities:
+    - region: coast
+  - slot_was_set:
+    - region: coast
+  - action: region_form
+  - active_loop: region_form
+  - slot_was_set:
+    - region: coast
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_region_climate
+  - intent: gratitude
+  - action: utter_gratitude
+  - intent: goodbye
+  - action: utter_goodbye

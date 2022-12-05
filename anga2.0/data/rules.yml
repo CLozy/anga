@@ -1,0 +1,86 @@
+version: "3.1"
+
+rules:
+
+- rule: Activate location form
+  steps:
+  - intent: city
+  - action: location_form
+  - active_loop: location_form
+
+- rule: Submit location form
+  condition: 
+  - active_loop: location_form
+  steps:
+  - action: location_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: current_weather_forecast
+
+- rule: Activate location form
+  steps:
+  - intent: weather_current_city
+  - action: location_form
+  - active_loop: location_form
+
+- rule: Submit location form
+  condition: 
+  - active_loop: location_form
+  steps:
+  - action: location_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: current_weather_forecast
+
+- rule: Activate location date form
+  steps:
+  - intent: ask_weather_daily
+  - action: location_date_form
+  - active_loop: location_date_form
+
+- rule: Submit location date form
+  condition: 
+  - active_loop: location_date_form
+  steps:
+  - action: location_date_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: daily_weather_forecast
+
+
+- rule: Activate region form
+  steps:
+  - intent: region
+  - action: region_form
+  - active_loop: region_form
+
+- rule: Submit region form
+  condition: 
+  - active_loop: region_form
+  steps:
+  - action: region_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_region_climate
+
+
+- rule: faq rule for intents with low confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_rephrase
+  - action: utter_faq
+
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

@@ -1,0 +1,66 @@
+{
+    "kenya": {
+        "coast": {
+            "image": [
+                "http://maps.maphill.com/kenya/coast/maps/satellite-map/darken/free-fancy-darken-satellite-map-of-coast.jpg"
+            ],
+            "preview": "Kenyan coastline boasts stunning white sand beaches, coral atolls, mangrove forests, lagoons, streams, uninhabited islands, and isolated bays. \n A huge variety of marine and land flora and wildlife can be found here. It is mostly populated by Mijikenda, Swahili, and Arabs, whose rich cultural heritage has drawn tourists. Agriculture and fishing are their major economic activities. \n Here are some articles and videos explaining how climate change has impacted the region. \n",
+            "articles": [
+                "https://www.msn.com/en-xl/news/other/kenya-climate-change-taking-a-toll-on-coastal-towns/ar-AAQfHRg",
+                "https://ww3.rics.org/uk/en/journals/land-journal/how-does-climate-change-affect-coastal-regions-.html ",
+                "https://www.weforum.org/agenda/2021/03/how-climate-change-is-affecting-kenyan-fishers-and-what-is-being-done-to-help-them/",
+                "https://www.the-star.co.ke/counties/coast/2022-03-30-rising-temperature-affecting-marine-life-climate-change-advocates-warn/"
+            ],
+            "videos": []
+        },
+        "northeasterneastern": {
+            "image": [
+                "http://maps.maphill.com/kenya/eastern/maps/satellite-map/darken/free-fancy-darken-satellite-map-of-eastern.jpg",
+                "http://maps.maphill.com/kenya/n-eastern/maps/satellite-map/darken/free-fancy-darken-satellite-map-of-n-eastern.jpg"
+            ],
+            "preview": "Kenya's eastern and north-eastern regions have a semi-arid, hot desert environment, a variety of wildlife, and a significant river called the Tana River, which is home to the greatest population of Nile Crocodiles in Africa. \n The region is inhabited by a heavily livestock and agriculturally dependent population known as the cushitic people. \n Here are some articles and videos explaining how climate change has impacted the region. \n",
+            "articles": [
+                "https://minorityrights.org/trends2019/kenya/",
+                "https://www.concernusa.org/story/climate-crisis-in-kenya/",
+                "https://www.standardmedia.co.ke/ureport/story/2000215071/climate-change-exacerbating-conflicts-in-northern-kenya",
+                "https://www.giz.de/en/worldwide/30615.html"
+            ],
+            "videos": []
+        },
+        "central": {
+            "image": [
+                "http://maps.maphill.com/kenya/central/maps/satellite-map/darken/free-fancy-darken-satellite-map-of-central.jpg"
+            ],
+            "preview": "Due to its higher altitude, Kenya's central area typically experiences colder temperatures than the rest of the country. \n It is home to Mt. Kenya, the second-largest peak in Africa, and the Gikuyu people, whose primary economic activity is agriculture and the cultivation of some of Kenya's top exports, such as tea, coffee, and pyrethrum. \n Here are some articles and videos explaining how climate change has impacted the region. \n",
+            "articles": [
+                "https://www.worldbank.org/en/news/feature/2019/03/20/mount-kenya-a-view-of-climate-impacts-and-opportunities"
+            ],
+            "videos": [
+                "https://www.youtube.com/watch?v=bLJuG0BI1jU"
+            ]
+        },
+        "riftvalley": {
+            "image": [
+                "http://maps.maphill.com/kenya/rift-valley/maps/satellite-map/darken/free-fancy-darken-satellite-map-of-rift-valley.jpg"
+            ],
+            "preview": "Significant geographic features in the region include the extinct volcanoes Mount Longonot and Mount Suswa, Lake Baringo, Lake Bogoria, Lake Magadi, Lake Nakuru, Lake Naivasha, the Suguta Valley, and Lake Turkana, in addition to the Rift Valley itself. \n The Rift Valley's people depend heavily on agriculture and farming-related industries because highlands offer sufficient rainfall for these industries. \n The Kericho district is known for its highland tea, but the area also has a thriving horticultural industry and engages in substantial amounts of cattle husbandry. Several villages can be found in the Rift Valley. \n  The Kalenjin and the Maasai are two of the most well-known ethnic groupings among the people of the Rift Valley, who constitute a patchwork of several ethnic identities. \n Here are some articles and videos explaining how climate change has impacted the region. \n",
+            "articles": [
+                "https://www.aljazeera.com/news/2020/8/30/why-kenyas-rift-valley-lakes-are-going-through-a-crisis",
+                "https://www.the-star.co.ke/counties/nyanza/2021-08-08-climate-change-hurts-coffee-production-in-kisii/",
+                "https://africasacountry.com/2020/09/the-rising-lakes-of-the-rift-valley"
+            ],
+            "videos": []
+        },
+        "westernnyanza": {
+            "image": [
+                "http://maps.maphill.com/kenya/western/maps/satellite-map/darken/free-fancy-darken-satellite-map-of-western.jpg",
+                "http://maps.maphill.com/kenya/nyanza/maps/satellite-map/darken/free-fancy-darken-satellite-map-of-nyanza.jpg"
+            ],
+            "preview": "The physical landscape of the Western Region is varied, ranging from the hills of northern Bungoma County to the plains bordering the lake Victoria basin in the Nyanza region. On the Nyanza side, the climate is primarily tropical  humid, while tropical on western side with altitude-related variations. \n In the western region, farming predominates, whereas fishing is the main source of income in the Nyanza region. \n Luhya, Luo, and Kisii people make up the majority of the population in the area. \n Here are some articles and videos explaining how climate change has impacted the region. \n",
+            "articles": [
+                "https://unfccc.int/climate-action/momentum-for-change/activity-database/momentum-for-change-watergy-lake-victoria-climate-change-assessment"
+            ],
+            "videos": []
+        }
+    }
+}

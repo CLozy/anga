@@ -1,0 +1,6 @@
+rasa
+requests
+bs4
+python-dotenv
+pandas
+newsapi-python

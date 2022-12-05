@@ -1,0 +1,117 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - ssup
+    - anga
+    - hey anga
+- intent: goodnews
+  examples: |
+    - goodnews
+    - good news
+- intent: badnews
+  examples: |
+    - badnews
+    - bad news
+- intent: region
+  examples: |
+    - [coast](region)
+    - [central](region)
+    - [north eastern and eastern](region)
+    - [northeasterneastern](region)
+    - [riftvalley](region)
+    - [westernnyanza](region)
+    - [western and nyanza](region)
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: city
+  examples: |
+    - my current location is [nyeri](city)
+    - Location is [Mombasa](city)
+    - I stay in [Nairobi](city)
+    - My location is [johannesburg](city)
+    - Am in [london](city)
+    - Residing in [washington](city)
+    - [singapore](city)
+    - [mombasa](city)
+- intent: gratitude
+  examples: |
+    - Thank you
+    - Thanks
+    - Gracious
+    - Thank you very much
+    - Thanks anga
+    - thanks
+- intent: ask_weather_current
+  examples: |
+    - tell me about the weather.
+    - weather forecast?
+    - is it going to rain?
+    - how the weather look today?
+- intent: weather_current_city
+  examples: |
+    - whats the weather in [mombasa](city)?
+    - How does the weather look like in [johannesburg](city)
+    - what the weather in [nakuru](city)
+    - is it cold in [embu](city)
+- intent: ask_weather_daily
+  examples: |
+    - Hey, anga,ill be travelling to [singapore](city) on [sunday](date) what will the weather be like?
+    - is it going to rain [friday](date) in [nairobi](city)?
+    - whats the weather in [berlin](city) [tuesday](date)?
+    - whats the weather like on [thursday](date) in [nairobi](city)
+    - tell me weather in [mombasa](city) [tomorrow](date)
+    - am going to dunda in [nairobi](city) on [friday](date), whats will the weather be then?
+- intent: ask_climate
+  examples: |
+    - Hey anga, how does climate change affect my country?
+    - hi , anga  tell me about cimate change.
+    - what is climate change?
+    - Ssup anga, what do you know about climate change?
+    - hey anga, what do you know about climate change in kenya?
+    - what is the situation at the kenyan [coast](region) with regards to climate change
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see ya
+    - bye anga
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- lookup: city
+  examples: |
+    - eldoret
+    - nakuru
+    - kisumu
+    - nairobi
+    - mombasa
+    - nyeri

@@ -1,0 +1,304 @@
+{
+    "codes": [
+        {
+            "symbol": "d000",
+            "phrase": "clear",
+            "img": "https://developer.foreca.com/static/images/symbols/d000.png"
+        },
+        {
+            "symbol": "d100",
+            "phrase": "Mostly clear",
+            "img": "https://developer.foreca.com/static/images/symbols/d100.png"
+        },
+        {
+            "symbol": "d200",
+            "phrase": "Partly cloudy",
+            "img": "https://developer.foreca.com/static/images/symbols/d200.png"
+        },
+        {
+            "symbol": "d210",
+            "phrase": "Partly cloudy and light rain",
+            "img": "https://developer.foreca.com/static/images/symbols/d210.png"
+        },
+        {
+            "symbol": "d220",
+            "phrase": "Partly cloudy and showers",
+            "img": "https://developer.foreca.com/static/images/symbols/d220.png"
+        },
+        {
+            "symbol": "d240",
+            "phrase": "Partly cloudy, thunderstorms with rain",
+            "img": "https://developer.foreca.com/static/images/symbols/d240.png"
+        },
+        {
+            "symbol": "d211",
+            "phrase": "Partly cloudy and light wet snow",
+            "img": "https://developer.foreca.com/static/images/symbols/d211.png"
+        },
+        {
+            "symbol": "d221",
+            "phrase": "Partly cloudy and wet snow showers",
+            "img": "https://developer.foreca.com/static/images/symbols/d221.png"
+        },
+        {
+            "symbol": "d212",
+            "phrase": "Partly cloudy and light snow",
+            "img": "https://developer.foreca.com/static/images/symbols/d212.png"
+        },
+        {
+            "symbol": "d222",
+            "phrase": "Partly cloudy and snow showers",
+            "img": "https://developer.foreca.com/static/images/symbols/d222.png"
+        },
+        {
+            "symbol": "d300",
+            "phrase": "cloudy",
+            "img": "https://developer.foreca.com/static/images/symbols/d300.png"
+        },
+        {
+            "symbol": "d310",
+            "phrase": "cloudy and light rain",
+            "img": "https://developer.foreca.com/static/images/symbols/d310.png"
+        },
+        {
+            "symbol": "d320",
+            "phrase": "cloudy and showers",
+            "img": "https://developer.foreca.com/static/images/symbols/d320.png"
+        },
+        {
+            "symbol": "d340",
+            "phrase": "cloudy thunderstorms with rain",
+            "img": "https://developer.foreca.com/static/images/symbols/d340.png"
+        },
+        {
+            "symbol": "d311",
+            "phrase": "cloudy and light wet snow",
+            "img": "https://developer.foreca.com/static/images/symbols/d311.png"
+        },
+        {
+            "symbol": "d321",
+            "phrase": "cloudy and wet snow showers",
+            "img": "https://developer.foreca.com/static/images/symbols/d321.png"
+        },
+        {
+            "symbol": "d312",
+            "phrase": "cloudy and light snow ",
+            "img": "https://developer.foreca.com/static/images/symbols/d312.png"
+        },
+        {
+            "symbol": "d322",
+            "phrase": "cloudy and snow showers",
+            "img": "https://developer.foreca.com/static/images/symbols/d322.png"
+        },
+        {
+            "symbol": "d400",
+            "phrase": "overcast",
+            "img": "https://developer.foreca.com/static/images/symbols/d400.png"
+        },
+        {
+            "symbol": "d410",
+            "phrase": "overcast and light rain",
+            "img": "https://developer.foreca.com/static/images/symbols/d410.png"
+        },
+        {
+            "symbol": "d420",
+            "phrase": "overcast and showers",
+            "img": "https://developer.foreca.com/static/images/symbols/d420.png"
+        },
+        {
+            "symbol": "d430",
+            "phrase": "overcast and rain",
+            "img": "https://developer.foreca.com/static/images/symbols/d430.png"
+        },
+        {
+            "symbol": "d440",
+            "phrase": "overcast, thunderstorms with rain",
+            "img": "https://developer.foreca.com/static/images/symbols/d440.png"
+        },
+        {
+            "symbol": "d411",
+            "phrase": "overcast and light wet snow",
+            "img": "https://developer.foreca.com/static/images/symbols/d411.png"
+        },
+        {
+            "symbol": "d421",
+            "phrase": "overcast and wet snow showers",
+            "img": "https://developer.foreca.com/static/images/symbols/d421.png"
+        },
+        {
+            "symbol": "d431",
+            "phrase": "overcast and wet snow",
+            "img": "https://developer.foreca.com/static/images/symbols/d431.png"
+        },
+        {
+            "symbol": "d412",
+            "phrase": "overcast and light snow",
+            "img": "https://developer.foreca.com/static/images/symbols/d412.png"
+        },
+        {
+            "symbol": "d432",
+            "phrase": "overcast and snow  showers",
+            "img": "https://developer.foreca.com/static/images/symbols/d432.png"
+        },
+        {
+            "symbol": "d500",
+            "phrase": "thin upper cloud",
+            "img": "https://developer.foreca.com/static/images/symbols/d500.png"
+        },
+        {
+            "symbol": "d600",
+            "phrase": "fog",
+            "img": "https://developer.foreca.com/static/images/symbols/d600.png"
+        },
+        {
+            "symbol": "n000",
+            "phrase": "clear",
+            "img": "https://developer.foreca.com/static/images/symbols/n000.png"
+        },
+        {
+            "symbol": "n100",
+            "phrase": "mostly clear",
+            "img": "https://developer.foreca.com/static/images/symbols/n100.png"
+        },
+        {
+            "symbol": "n200",
+            "phrase": "partly cloudy",
+            "img": "https://developer.foreca.com/static/images/symbols/n200.png"
+        },
+        {
+            "symbol": "n210",
+            "phrase": "partly cloudy and light rain",
+            "img": "https://developer.foreca.com/static/images/symbols/n210.png"
+        },
+        {
+            "symbol": "n220",
+            "phrase": "partly cloudy and showers",
+            "img": "https://developer.foreca.com/static/images/symbols/n220.png"
+        },
+        {
+            "symbol": "n240",
+            "phrase": "partly cloudy , thunderstorms with rain",
+            "img": "https://developer.foreca.com/static/images/symbols/n240.png"
+        },
+        {
+            "symbol": "n211",
+            "phrase": "Partly cloudy and light wet snow",
+            "img": "https://developer.foreca.com/static/images/symbols/n211.png"
+        },
+        {
+            "symbol": "n221",
+            "phrase": "Partly cloudy and wet snow showers",
+            "img": "https://developer.foreca.com/static/images/symbols/n221.png"
+        },
+        {
+            "symbol": "n212",
+            "phrase": "Partly cloudy and light snow",
+            "img": "https://developer.foreca.com/static/images/symbols/n212.png"
+        },
+        {
+            "symbol": "n222",
+            "phrase": "Partly cloudy and snow showers",
+            "img": "https://developer.foreca.com/static/images/symbols/n222.png"
+        },
+        {
+            "symbol": "n300",
+            "phrase": "cloudy",
+            "img": "https://developer.foreca.com/static/images/symbols/n300.png"
+        },
+        {
+            "symbol": "n310",
+            "phrase": "cloudy and light rain",
+            "img": "https://developer.foreca.com/static/images/symbols/n310.png"
+        },
+        {
+            "symbol": "n320",
+            "phrase": "cloudy and showers",
+            "img": "https://developer.foreca.com/static/images/symbols/n320.png"
+        },
+        {
+            "symbol": "n340",
+            "phrase": "cloudy thunderstorms with rain",
+            "img": "https://developer.foreca.com/static/images/symbols/n340.png"
+        },
+        {
+            "symbol": "n311",
+            "phrase": "cloudy and light wet snow",
+            "img": "https://developer.foreca.com/static/images/symbols/n311.png"
+        },
+        {
+            "symbol": "n321",
+            "phrase": "cloudy and wet snow showers",
+            "img": "https://developer.foreca.com/static/images/symbols/n321.png"
+        },
+        {
+            "symbol": "n312",
+            "phrase": "cloudy and light snow ",
+            "img": "https://developer.foreca.com/static/images/symbols/n312.png"
+        },
+        {
+            "symbol": "n322",
+            "phrase": "cloudy and snow showers",
+            "img": "https://developer.foreca.com/static/images/symbols/n322.png"
+        },
+        {
+            "symbol": "n400",
+            "phrase": "overcast",
+            "img": "https://developer.foreca.com/static/images/symbols/n400.png"
+        },
+        {
+            "symbol": "n410",
+            "phrase": "overcast and light rain",
+            "img": "https://developer.foreca.com/static/images/symbols/n410.png"
+        },
+        {
+            "symbol": "n420",
+            "phrase": "overcast and showers",
+            "img": "https://developer.foreca.com/static/images/symbols/n420.png"
+        },
+        {
+            "symbol": "n430",
+            "phrase": "overcast and rain",
+            "img": "https://developer.foreca.com/static/images/symbols/n430.png"
+        },
+        {
+            "symbol": "n440",
+            "phrase": "overcast, thunderstorms with rain",
+            "img": "https://developer.foreca.com/static/images/symbols/n440.png"
+        },
+        {
+            "symbol": "n411",
+            "phrase": "overcast and light wet snow",
+            "img": "https://developer.foreca.com/static/images/symbols/n411.png"
+        },
+        {
+            "symbol": "n421",
+            "phrase": "overcast and wet snow showers",
+            "img": "https://developer.foreca.com/static/images/symbols/n421.png"
+        },
+        {
+            "symbol": "n431",
+            "phrase": "overcast and wet snow",
+            "img": "https://developer.foreca.com/static/images/symbols/n431.png"
+        },
+        {
+            "symbol": "n412",
+            "phrase": "overcast and light snow",
+            "img": "https://developer.foreca.com/static/images/symbols/n412.png"
+        },
+        {
+            "symbol": "n432",
+            "phrase": "overcast and snow  showers",
+            "img": "https://developer.foreca.com/static/images/symbols/n432.png"
+        },
+        {
+            "symbol": "n500",
+            "phrase": "thin upper cloud",
+            "img": "https://developer.foreca.com/static/images/symbols/n500.png"
+        },
+        {
+            "symbol": "n600",
+            "phrase": "fog",
+            "img": "https://developer.foreca.com/static/images/symbols/n600.png"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+version: '3'
+services:
+  action_server:
+    build: 
+      context: ./anga2.0
+      dockerfile: Dockerfile_action
+    ports:
+     - "5058:5058"
+
+  api:
+    build: 
+      context: ./website
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+  bot:
+    build: 
+      context: ./anga2.0
+      dockerfile: Dockerfile_bot
+    ports:
+      - "5008:5008"

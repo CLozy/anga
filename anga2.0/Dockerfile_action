@@ -1,0 +1,14 @@
+FROM python:3.9.13-slim-buster
+
+RUN apt-get update && apt-get install -y build-essential
+WORKDIR /anga2.0
+
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+
+COPY . .
+
+
+EXPOSE 5058
+
+CMD ["rasa", "run", "actions", "-p", "5058"]
